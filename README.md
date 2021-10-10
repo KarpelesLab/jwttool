@@ -1,0 +1,15 @@
+# jwttool
+
+Tool to generate jwt tokens
+
+# example
+
+	HSM=yubihsm2 CLUSTER=test ./jwttool gen foo MCowBQYDK2VwAyEAt_3-JQD4_7hakHqskvLFAqmM9FYH3tDcUOl-ga-r9JI 256
+
+This generates a token for a node named "foo" with key `MCowBQYDK2VwAyEAt_3-JQD4_7hakHqskvLFAqmM9FYH3tDcUOl-ga-r9JI` that will expire in 256 days.
+
+	eyJhbGciOiJFUzI1NiIsImtpZCI6Ik1Ga3dFd1lIS29aSXpqMENBUVlJS29aSXpqMERBUWNEUWdBRTdwcm9qVEhNZ3A4b2ktc1EtRXd5amw5VTFwZFlHRjNVUWIxcENVMFc0VTFNVmxWRGF1YVNISGJzNlFDTVBLSzhQV1YxWENaZlNBSllhbXpSTlZObEhBIn0.eyJhdWQiOiJkaXJlY3RvcnkuYXRvbmxpbmUuY29tIiwiZXhwIjoxNjU2MDAwNjEzLCJpYXQiOjE2MzM4ODIyMTMsImlzcyI6InRlc3QiLCJuYW0iOiJmb28iLCJzdWIiOiJNQ293QlFZREsyVndBeUVBdF8zLUpRRDRfN2hha0hxc2t2TEZBcW1NOUZZSDN0RGNVT2wtZ2EtcjlKSSJ9.MEMCIFK1haI6-SPamiI0PvTmVpy4PP0d3OxhoYGngzQnFVmgAh9Cfp0_A8zwtSgHTiiE0KmnDQnXxUK-sMbeCP8sbLTa
+
+Expiration is optional.
+
+Multiple keys sharing the same cluster will allow nodes to find each other using a directory service.
